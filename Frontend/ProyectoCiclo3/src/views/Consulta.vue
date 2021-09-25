@@ -1,51 +1,31 @@
 <template>
   <!--- agrege la barra donde estan las rutas que redirecionan a 
   las demas vistas ademas de una imagen - joel----->
-  <v-app>
+  <div class="consulta">
+    <Navegacion></Navegacion>
+<v-app>
     <div class="home">
         <img alt="logo" src="../assets/MascotasVacunadas.jpg">
     </div>
+    <v-card elevation="2" class="pa-5 ma-5" min-height="500px">
+      <v-row align="center" class="ma-0" justify="space between">
+      <Carta nombreMascota="Mascota1" ultimaFechaV="23/09/2021" descripcion="Vacuna 1"></Carta>
+      <Carta nombreMascota="Mascota1" ultimaFechaV="23/09/2021" descripcion="Vacuna 1"></Carta>
+      <Carta nombreMascota="Mascota1" ultimaFechaV="23/09/2021" descripcion="Vacuna 1"></Carta>
+      </v-row>
+    </v-card>
     
-    <v-app-bar
-      app
-      color="primary"
-      dark
-      >
-      <v-spacer></v-spacer>
-      
-      <div id="app">
-        <div id="nav">
-        
-        <router-link to="/inscripcion">Inscripción </router-link>
-        <router-link to="/consulta">Consulta</router-link>
-        <router-link to="/insmascota">Inscribir Mascota</router-link>
-        </div> 
-      </div>
-      
-    <v-spacer></v-spacer>
-
-    <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          min-width="60"
-          src="https://cdn-icons-png.flaticon.com/128/2372/2372856.png"
-          transition="scale-transition"
-          width="60"
-        />
-        </div>
-    
-    </v-app-bar>
-    
-    
-    <Busqueda></Busqueda>
+  
   </v-app>
+  
+  </div>
   
 </template>
 
 <script>
 import Busqueda from '../components/Busqueda.vue'
+import Carta from '../components/Carta.vue'
+import Navegacion from '../components/Navegacion.vue'
 
 
 export default {
@@ -53,7 +33,9 @@ export default {
   name: 'Inscripcion',
   components: {
    
-    Busqueda  
+    Busqueda,
+    Navegacion,
+    Carta  
   }
 }
 </script>

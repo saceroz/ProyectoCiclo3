@@ -1,15 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      
-
-    </v-app-bar>
-
-    <v-main>
+    <v-main class="app">
       <router-view/>
     </v-main>
   </v-app>
@@ -25,3 +16,9 @@ export default {
   }),
 };
 </script>
+<style>
+.app{
+  align-items: center;
+  text-align: center;
+}
+</style>

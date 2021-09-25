@@ -1,13 +1,15 @@
 <template>
-  <v-card id="card" class="mx-auto" max-width="350">
+<div class="login">
+<v-card id="card" class="mx-auto" width="350">
     <h1> INICIO SESIÓN </h1>
     <v-img
       src="../assets/MascotasVacunadas.jpg"
-      height="100%"
+      height="180"
+      contain
     ></v-img>
 
     <v-card-tex>
-      <v-form>
+      <v-form class="mx-5">
         <v-text-field
           label="Usuario"
           placeholder="Número Identificación"
@@ -20,15 +22,19 @@
         ></v-text-field>
       </v-form>
     </v-card-tex>
-
-    <v-card-actions id="bt1">
-      <v-btn depressed color="error" elevation="14" x-large @click="login">INICIAR SESIÓN</v-btn>
-    </v-card-actions>
+    <div class="contenedor">
+      <v-card-actions id="bt1">
+      <v-btn depressed color="error" elevation="2" block @click="login">INICIAR SESIÓN</v-btn>
+      </v-card-actions>
     
-    <v-card-actions id="bt2">
-      <v-btn depressed color="primary" elevation="14" x-large @click="registro">REGISTRARME</v-btn>
+    <v-card-actions id="bt1">
+      <v-btn depressed color="primary" elevation="2" block @click="registro">REGISTRARME</v-btn>
     </v-card-actions>
+    </div>
+    <router-link to="/recuperarContraseña" class="span">¿Olvidaste tu contraseña?</router-link>
   </v-card>
+</div>
+  
 </template>
 
 <script>
@@ -54,8 +60,14 @@ export default {
 </script>
 
 <style>
+.login{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #card {
-  margin: 2%;
+  height: fit-content;
   justify-content: center;
 }
 h1{
@@ -64,10 +76,22 @@ h1{
 
 #bt1 {
    justify-content: center;
-  
 }
-#bt2 {
-   justify-content: center;
+.contenedor{
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+.span{
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  padding: 1.3rem;
+  color: blue;
+  text-decoration: none;
 }
 
 </style>
